@@ -1,6 +1,6 @@
 export const BANK_VERSION='0.1';
-const q=(id,prompt,answers,correct,explanation,source='types',diagram=null)=>({id,family:id,domain:'patterns',format:'choice',prompt,choices:answers.map((text,i)=>({id:String(i),text})),answer:String(correct),explanation,sources:[source],diagram,difficulty:1});
-export const questions=[
+const q=(id,prompt,answers,correct,explanation,source='types',diagram=null)=>({id,family:id,domain:source==='types'?'patterns':'repair',format:'choice',prompt,choices:answers.map((text,i)=>({id:String(i),text})),answer:String(correct),explanation,sources:[source],diagram,difficulty:1});
+const prototypes=[
 q('p1','The break crosses the shaft at a right angle. Which pattern describes it?',['Transverse','Oblique','Spiral','Greenstick'],0,'A transverse fracture crosses the long axis of the bone at a right angle.','types','transverse'),
 q('p2','Which pattern is most closely associated with a twisting force?',['Impacted','Spiral','Transverse','Comminuted'],1,'A spiral fracture follows a twisting pattern. Use the fracture geometry together with the described force.','types','spiral'),
 q('p3','Several small fragments lie between two large bone segments. What is the pattern?',['Oblique','Greenstick','Comminuted','Impacted'],2,'Comminuted fractures produce multiple fragments.','types','comminuted'),
@@ -13,4 +13,11 @@ q('r1','Which event comes first in the textbook’s repair sequence?',['A fractu
 q('r2','Which cells resorb damaged bone during repair?',['Osteoblasts','Osteocytes','Chondrocytes','Osteoclasts'],3,'Osteoclasts resorb bone; osteoblasts form new bone. The names are similar but the functions differ.','s63'),
 q('r3','What replaces cartilage in the calli during fracture repair?',['Trabecular bone','Yellow marrow','Articular cartilage','A growth plate'],0,'The cartilage in the calli is replaced by trabecular bone through endochondral ossification.','repair','bony'),
 q('r4','What distinguishes open reduction from closed reduction?',['Whether the skin was intact at injury','Whether surgery exposes the fracture for resetting','Whether the bone is a long bone','Whether a hematoma forms'],1,'Reduction names the procedure used to restore alignment. Open reduction exposes the fracture surgically. It is distinct from open fracture classification.','s65')
+];
+
+export const questions=[...prototypes,
+{id:'m1',family:'skin-geometry',domain:'classification',format:'multi',prompt:'An injury has a right-angle break and damaged skin communicating with the fracture. Select both descriptions.',choices:[{id:'t',text:'Transverse'},{id:'o',text:'Open'},{id:'c',text:'Closed'},{id:'g',text:'Greenstick'}],answer:['t','o'],explanation:'Geometry and skin status describe different aspects. This injury is both transverse and open.',sources:['types']},
+{id:'l1',family:'callus-label',domain:'cells',format:'label',prompt:'Label the outer and inner repair bridges at targets 1 and 2.',targets:[{id:'1',label:'1',answer:'External callus',aliases:['external calli']},{id:'2',label:'2',answer:'Internal callus',aliases:['internal calli']}],diagram:'callus',diagramTargets:true,explanation:'The external callus develops around the fracture. The internal callus forms within the fractured bone.',sources:['repair']},
+{id:'o1',family:'repair-order',domain:'repair',format:'order',prompt:'Arrange the major events of fracture repair from earliest to latest.',order:[{id:'h',text:'Fracture hematoma'},{id:'s',text:'Internal and external calli'},{id:'b',text:'Bony callus'},{id:'r',text:'Remodeling'}],explanation:'A hematoma is followed by repair calli, a bony bridge, and remodeling.',sources:['repair']},
+{id:'w1',family:'reduction-explain',domain:'classification',format:'text',prompt:'Explain why a closed fracture and closed reduction describe different things.',rubric:[{id:'skin',text:'Closed fracture means the skin remains intact.'},{id:'procedure',text:'Closed reduction realigns fragments without surgically exposing the fracture.'}],explanation:'Fracture classification describes the injury. Reduction describes the procedure used to align the fragments.',sources:['s65']}
 ];

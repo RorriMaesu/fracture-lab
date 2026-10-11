@@ -6,7 +6,7 @@ const uid=id+'-'+(++serial),open=type==='open',split=type==='closed'||open;
 return `<svg class="bone-svg ${hero?'hero-bone':''}" viewBox="0 0 240 440" role="img" aria-labelledby="${uid}-title"><title id="${uid}-title">${label?type+' fracture':'Schematic long bone showing the fracture to classify'}</title><defs><linearGradient id="${uid}-bone" x1="0" x2="1"><stop stop-color="#ede9db"/><stop offset=".45" stop-color="#fffcf1"/><stop offset="1" stop-color="#d4d4c5"/></linearGradient><clipPath id="${uid}-clip"><path d="${outline}"/></clipPath></defs>
 ${(open||type==='closed')?`<path d="M60 32 Q48 210 65 397 L172 397 Q190 240 172 32Z" fill="#edc9b2" opacity=".65"/>`:''}
 <g transform="${hero?'rotate(17 120 220)':''}">
-${split?`<g><path d="${outline}" fill="url(#${uid}-bone)" stroke="#748077" stroke-width="2" clip-path="inset(0 0 53% 0)"/><g transform="${open?'translate(45 -1) rotate(-22 120 216)':'translate(0 14)'}"><path d="${outline}" fill="url(#${uid}-bone)" stroke="#748077" stroke-width="2" style="clip-path:inset(49% 0 0 0)"/></g></g>`:`<path d="${outline}" fill="url(#${uid}-bone)" stroke="#748077" stroke-width="2"/><path d="M115 114 Q112 218 119 320" fill="none" stroke="#c4bd9e" stroke-width="10" opacity=".22"/>`}
+${split?`<g><path d="${outline}" fill="url(#${uid}-bone)" stroke="#748077" stroke-width="2" style="clip-path:inset(0 0 53% 0)"/><g transform="${open?'translate(45 -1) rotate(-22 120 216)':'translate(0 14)'}"><path d="${outline}" fill="url(#${uid}-bone)" stroke="#748077" stroke-width="2" style="clip-path:inset(49% 0 0 0)"/></g></g>`:`<path d="${outline}" fill="url(#${uid}-bone)" stroke="#748077" stroke-width="2"/><path d="M115 114 Q112 218 119 320" fill="none" stroke="#c4bd9e" stroke-width="10" opacity=".22"/>`}
 <g clip-path="url(#${uid}-clip)" stroke="#c6bb9b" stroke-width="1" opacity=".58">${Array.from({length:9},(_,i)=>`<path d="M${69+i*10} 29 l35 40 m-31 -8 l40 -32 M${75+i*10} 358 l30 37 m-34 -8 l40 -28"/>`).join('')}</g>
 <path class="fracture-line" d="${fractureLines[type]||''}" fill="none" stroke="#b64c3c" stroke-width="3.5" stroke-linecap="round"/>
 ${type==='comminuted'?'<path d="M110 213 l8 -6 5 11 -10 8Z" fill="#f4e7cd" stroke="#b64c3c" stroke-width="2"/>':''}
@@ -33,4 +33,5 @@ return `<svg class="anatomy-svg" viewBox="0 0 420 470" role="img" aria-labelledb
 <path d="M228 141V339" stroke="#526f61" stroke-width="3"/>
 <g class="diagram-markers"><path d="M76 59H165 M76 215H187 M76 412H162 M274 250H217 M281 318H228 M271 116H229" stroke="#60766a" fill="none"/>${[[76,59,1],[76,215,2],[76,412,3],[284,250,4],[291,318,5],[281,116,6]].map(([x,y,n])=>`<circle cx="${x}" cy="${y}" r="16"/><text x="${x}" y="${y+5}">${n}</text>`).join('')}</g></svg>`;
 }
-export function diagram(q){if(!q.diagram)return '';return ['hematoma','callus','bony','remodeled'].includes(q.diagram)?repairSVG(q.diagram):fractureSVG(q.diagram);}
+export function diagram(q){if(!q.diagram)return '';return ['hematoma','callus','bony','remodeled'].includes(q.diagram)?repairSVG(q.diagram,{targets:q.diagramTargets}):fractureSVG(q.diagram);}
+
