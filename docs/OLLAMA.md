@@ -16,13 +16,19 @@ The helper saves `OLLAMA_ORIGINS` for the exact website origin, normally `https:
 
 ## Models, folders and phones
 
-The connected model selector is directly above the conversation. **Connected** opens preferences and additional model downloads. You can enter other valid local model names from the [Ollama library](https://ollama.com/library). Cloud and embedding-only models are excluded. Download progress is streamed; stopping the browser request does not guarantee Ollama stops its download.
+Click the selected model above the conversation, or **Installed model** in connection settings, to open the searchable model library. Search accepts names such as “Gemma 4” and shows every matching tag. Sort by model name, file size or recently added; each choice shows its parameter count, file size, quantization and reported capabilities. A model already loaded by Ollama is marked **In memory**. Your existing selection is preserved across refreshes and return visits. **Connected** opens preferences and additional model downloads. You can enter other valid local model names from the [Ollama library](https://ollama.com/library). Cloud and embedding-only models appear under **Installed models need attention**, with an explanation, and cannot be selected for this local text tutor. Models whose details fail to load remain visible with Ollama’s error and a **Check again** button; they are never silently dropped. Use **Refresh list** to scan for newly installed models. Download progress is streamed; stopping the browser request does not guarantee Ollama stops its download.
 
 Custom installation folders are tucked under **Choose where to install it** in step 1. Windows users can generate an installer command for an absolute app folder. Set `OLLAMA_MODELS` separately for your chosen model folder before downloading models; existing models are not moved automatically. [Official Windows installation guide](https://docs.ollama.com/windows).
 
 A browser cannot reliably read total GPU VRAM. The guide offers a simple memory selector with starting suggestions, rather than claiming an automatic hardware measurement. Download size is not total memory required.
 
 Use the tutor on the computer running Ollama. On a phone, localhost refers to that phone rather than your desktop. The quiz still works on mobile without AI. The site accepts only loopback addresses and does not provide an unauthenticated LAN server or public tunnel.
+
+## A model is installed but missing
+
+This website reads the connected Ollama server’s [installed model list](https://docs.ollama.com/api/tags). It cannot scan your computer’s drives. If a model is absent, open **Not seeing a model you installed?** in the selector and check the server address, model folder and completed download in Ollama. A different model folder, another computer or another AI app has a separate inventory. Changing `OLLAMA_MODELS` requires restarting Ollama; do not point it at a new folder unless you intend to use that library. [Official folder configuration](https://docs.ollama.com/faq#where-are-models-stored).
+
+The picker refreshes its inventory when opened after 30 seconds. Successful model details are cached for five minutes using server address, exact tag and digest; failed details are retried rather than cached. **Refresh list** forces a fresh check. Choosing a model reads its details and saves your preference; it does not download or load the weights.
 
 ## Chat and quiz feedback
 
