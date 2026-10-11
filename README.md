@@ -14,11 +14,11 @@ An animated anatomy study lab for fracture patterns, bone repair, and supporting
 - Local progress with IndexedDB/localStorage fallback, backup export/import, and printable reports.
 - A sleek, optional Socratic chatbot for any topic: streamed multi-turn replies, locally saved conversations and drafts, stop/retry controls, copy and conversation export, installed model selection, and a three-step connection guide. Windows users get a readable connection helper; model downloads and custom-folder options are inside setup.
 - Evidence-backed AI rubric feedback, Socratic follow-up, provisional explanation/semantic-label credit, and restoration of the original rubric result. Objective keys stay authoritative. Errors preserve existing grades.
-- Responsive layout, keyboard controls, reduced motion, larger text, and automated accessibility/browser checks.
+- Screen-sized desktop workspaces, atlas tabs and focused answer reviews; growing records scroll inside their panels. The chat includes a desktop conversation sidebar, an animated orbital presence, staggered entrances, responsive ambient light and stable streamed replies. Mobile chat keeps its composer visible. Keyboard controls, reduced motion, larger text and automated accessibility/browser checks are included.
 
 ## Build milestones
 
-Each phase was pushed separately and tagged: [phase-1](https://github.com/RorriMaesu/fracture-lab/tree/phase-1), [phase-2](https://github.com/RorriMaesu/fracture-lab/tree/phase-2), [phase-3](https://github.com/RorriMaesu/fracture-lab/tree/phase-3), [phase-4](https://github.com/RorriMaesu/fracture-lab/tree/phase-4), and [phase-5](https://github.com/RorriMaesu/fracture-lab/tree/phase-5). The v1.1.0 tutor redesign was also pushed in two milestones. The app has a visible build-progress view. GitHub Actions validates and deploys the app to Pages.
+Each phase was pushed separately and tagged: [phase-1](https://github.com/RorriMaesu/fracture-lab/tree/phase-1), [phase-2](https://github.com/RorriMaesu/fracture-lab/tree/phase-2), [phase-3](https://github.com/RorriMaesu/fracture-lab/tree/phase-3), [phase-4](https://github.com/RorriMaesu/fracture-lab/tree/phase-4), and [phase-5](https://github.com/RorriMaesu/fracture-lab/tree/phase-5). The v1.1.0 tutor redesign and v1.2.0 desktop/chat polish were each pushed in two milestones. The app has a visible build-progress view. GitHub Actions validates and deploys the app to Pages.
 
 ## Visitors
 
