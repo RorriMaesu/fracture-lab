@@ -26,12 +26,5 @@ ${n>=1?`<g fill="none" stroke="#ae9471" stroke-width="2" opacity=".7">${Array.fr
 ${targets?'<g class="diagram-markers"><circle cx="93" cy="155" r="14"/><text x="93" y="160">1</text><circle cx="180" cy="156" r="14"/><text x="180" y="161">2</text><circle cx="177" cy="87" r="14"/><text x="177" y="92">3</text></g>':''}
 ${isFinal?'<path d="M113 27v266 M247 27v266" fill="none" stroke="#c7c1a7" stroke-width="12" opacity=".7"/>':''}</svg>`;
 }
-export function anatomySVG({id='anatomy',targets=true}={}){
-const uid=id+'-'+(++serial);
-return `<svg class="anatomy-svg" viewBox="0 0 420 470" role="img" aria-labelledby="${uid}-title"><title id="${uid}-title">Schematic long bone with numbered anatomical targets</title><g transform="translate(83 10)">${fractureSVG('healthy',{id:uid}).replace(/<path class="fracture-line"[\s\S]*?<\/path>/,'')}</g>
-<path d="M199 141V345" stroke="#d5b66e" stroke-width="20" opacity=".8"/>
-<path d="M228 141V339" stroke="#526f61" stroke-width="3"/>
-<g class="diagram-markers"><path d="M76 59H165 M76 215H187 M76 412H162 M274 250H217 M281 318H228 M271 116H229" stroke="#60766a" fill="none"/>${[[76,59,1],[76,215,2],[76,412,3],[284,250,4],[291,318,5],[281,116,6]].map(([x,y,n])=>`<circle cx="${x}" cy="${y}" r="16"/><text x="${x}" y="${y+5}">${n}</text>`).join('')}</g></svg>`;
-}
-export function diagram(q){if(!q.diagram)return '';return ['hematoma','callus','bony','remodeled'].includes(q.diagram)?repairSVG(q.diagram,{targets:q.diagramTargets}):fractureSVG(q.diagram);}
-
+export function anatomySVG({id='anatomy'}={}){const uid=id+'-'+(++serial);return `<svg class="anatomy-svg" viewBox="0 0 420 440" role="img" aria-labelledby="${uid}-title"><title id="${uid}-title">Long-bone cross-section with six numbered structures to identify</title><g transform="translate(80 0)"><path d="${outline}" fill="#ddd7bd" stroke="#64796a" stroke-width="2"/><path d="M112 112 Q105 216 111 326 L126 326 Q120 213 127 112Z" fill="#f0dc9d"/><g stroke="#ae9870" fill="none" stroke-width="1.5">${Array.from({length:8},(_,i)=>`<path d="M${80+i*10} 35 l20 40 m-22 -4 28 -29 M${82+i*9} 355 l18 38 m-20 -4 24 -29"/>`).join('')}</g><path d="M112 116V324" fill="none" stroke="#72947f" stroke-width="2"/></g><g class="diagram-markers"><path d="M81 54H179 M81 214H185 M81 382H175 M284 246H200 M284 313H209 M284 87H216" stroke="#60766a" stroke-width="1.5" fill="none"/>${[[76,54,1],[76,214,2],[76,382,3],[293,246,4],[293,313,5],[293,87,6]].map(([x,y,n])=>`<circle cx="${x}" cy="${y}" r="16"/><text x="${x}" y="${y+5}">${n}</text>`).join('')}</g></svg>`;}
+export function diagram(q){if(!q.diagram)return '';if(q.diagram==='anatomy')return anatomySVG();return ['hematoma','callus','bony','remodeled'].includes(q.diagram)?repairSVG(q.diagram,{targets:q.diagramTargets}):fractureSVG(q.diagram);}
