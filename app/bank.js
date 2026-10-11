@@ -1,0 +1,16 @@
+export const BANK_VERSION='0.1';
+const q=(id,prompt,answers,correct,explanation,source='types',diagram=null)=>({id,family:id,domain:'patterns',format:'choice',prompt,choices:answers.map((text,i)=>({id:String(i),text})),answer:String(correct),explanation,sources:[source],diagram,difficulty:1});
+export const questions=[
+q('p1','The break crosses the shaft at a right angle. Which pattern describes it?',['Transverse','Oblique','Spiral','Greenstick'],0,'A transverse fracture crosses the long axis of the bone at a right angle.','types','transverse'),
+q('p2','Which pattern is most closely associated with a twisting force?',['Impacted','Spiral','Transverse','Comminuted'],1,'A spiral fracture follows a twisting pattern. Use the fracture geometry together with the described force.','types','spiral'),
+q('p3','Several small fragments lie between two large bone segments. What is the pattern?',['Oblique','Greenstick','Comminuted','Impacted'],2,'Comminuted fractures produce multiple fragments.','types','comminuted'),
+q('p4','One fragment is driven into another. What is the pattern?',['Impacted','Spiral','Oblique','Greenstick'],0,'Impaction means that one bone fragment has been driven into another, commonly by compression.','types','impacted'),
+q('p5','Only one side of the bone is broken. Which pattern fits?',['Transverse','Comminuted','Spiral','Greenstick'],3,'A greenstick fracture is incomplete: only one side is broken.','types','greenstick'),
+q('p6','The skin remains intact above a fracture. Which term describes the skin status?',['Open','Closed','Spiral','Oblique'],1,'Closed describes intact skin. A separate term can describe the fracture pattern.','types','closed'),
+q('p7','A broken bone tears through the skin. Which classification applies?',['Closed','Simple','Open','Impacted'],2,'Open, also called compound, describes a fracture associated with a break through the skin. It carries an infection risk.','types','open'),
+q('p8','A straight fracture line is angled rather than perpendicular to the shaft. What is the pattern?',['Spiral','Transverse','Oblique','Comminuted'],2,'Oblique describes an angled fracture line. Spiral describes a twisting pattern.','types','oblique'),
+q('r1','Which event comes first in the textbook’s repair sequence?',['A fracture hematoma forms','Compact bone replaces the callus','Remodeling finishes','Calli unite'],0,'Bleeding from damaged vessels produces a fracture hematoma before callus formation.','repair','hematoma'),
+q('r2','Which cells resorb damaged bone during repair?',['Osteoblasts','Osteocytes','Chondrocytes','Osteoclasts'],3,'Osteoclasts resorb bone; osteoblasts form new bone. The names are similar but the functions differ.','s63'),
+q('r3','What replaces cartilage in the calli during fracture repair?',['Trabecular bone','Yellow marrow','Articular cartilage','A growth plate'],0,'The cartilage in the calli is replaced by trabecular bone through endochondral ossification.','repair','bony'),
+q('r4','What distinguishes open reduction from closed reduction?',['Whether the skin was intact at injury','Whether surgery exposes the fracture for resetting','Whether the bone is a long bone','Whether a hematoma forms'],1,'Reduction names the procedure used to restore alignment. Open reduction exposes the fracture surgically. It is distinct from open fracture classification.','s65')
+];

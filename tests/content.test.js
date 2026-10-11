@@ -1,0 +1,2 @@
+import test from 'node:test';import assert from 'node:assert/strict';import {questions} from '../app/bank.js';import {sources} from '../app/sources.js';
+test('questions have unique identities, valid keys and real source mappings',()=>{assert.equal(new Set(questions.map(q=>q.id)).size,questions.length);for(const q of questions){assert.ok(q.prompt.length>10);assert.ok(q.explanation);assert.ok(q.choices.some(c=>c.id===q.answer));for(const s of q.sources)assert.ok(sources[s]);}});
