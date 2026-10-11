@@ -12,19 +12,19 @@ An animated anatomy study lab for fracture patterns, bone repair, and supporting
 - Original SVG schematics, six-target bone labeling, internal/external callus labeling, and an animated four-stage repair explorer.
 - Component credit, unambiguous spelling tolerance, optional confidence, hints, saved drafts, session history, concept progress, reflection notes, and a searchable mistake notebook with direct textbook links.
 - Local progress with IndexedDB/localStorage fallback, backup export/import, and printable reports.
-- Optional local Ollama tutor: detection, desktop launch link where supported, installed local text-model selection, streamed downloads, custom model names, installation/model-folder guidance, hardware hints, and a quick model check.
+- A sleek, optional Socratic chatbot for any topic: streamed multi-turn replies, locally saved conversations and drafts, stop/retry controls, copy and conversation export, installed model selection, and a three-step connection guide. Windows users get a readable connection helper; model downloads and custom-folder options are inside setup.
 - Evidence-backed AI rubric feedback, Socratic follow-up, provisional explanation/semantic-label credit, and restoration of the original rubric result. Objective keys stay authoritative. Errors preserve existing grades.
 - Responsive layout, keyboard controls, reduced motion, larger text, and automated accessibility/browser checks.
 
 ## Build milestones
 
-Each phase was pushed separately and tagged: [phase-1](https://github.com/RorriMaesu/fracture-lab/tree/phase-1), [phase-2](https://github.com/RorriMaesu/fracture-lab/tree/phase-2), [phase-3](https://github.com/RorriMaesu/fracture-lab/tree/phase-3), [phase-4](https://github.com/RorriMaesu/fracture-lab/tree/phase-4), and [phase-5](https://github.com/RorriMaesu/fracture-lab/tree/phase-5). The app has a visible build-progress view. GitHub Actions validates and deploys the app to Pages.
+Each phase was pushed separately and tagged: [phase-1](https://github.com/RorriMaesu/fracture-lab/tree/phase-1), [phase-2](https://github.com/RorriMaesu/fracture-lab/tree/phase-2), [phase-3](https://github.com/RorriMaesu/fracture-lab/tree/phase-3), [phase-4](https://github.com/RorriMaesu/fracture-lab/tree/phase-4), and [phase-5](https://github.com/RorriMaesu/fracture-lab/tree/phase-5). The v1.1.0 tutor redesign was also pushed in two milestones. The app has a visible build-progress view. GitHub Actions validates and deploys the app to Pages.
 
 ## Visitors
 
 Open the website. No Fracture Lab download, account, API key, or AI installation is required for the quiz. Progress stays in this browser; export it before clearing site data or changing devices.
 
-The optional tutor requires Ollama and a local text model on the same computer. Follow the in-app Tutor guide or [the setup notes](docs/OLLAMA.md). Browser permissions and allowed-origin setup may be necessary. A website cannot universally launch installed software or detect total GPU VRAM. On a phone, localhost refers to the phone rather than your desktop.
+The optional tutor requires Ollama and a local text model on the same computer. Click Connect AI in the Tutor chat or [the setup notes](docs/OLLAMA.md). Browser permissions and allowed-origin setup may be necessary. A website cannot universally launch installed software or detect total GPU VRAM. On a phone, localhost refers to the phone rather than your desktop.
 
 ## Development
 
@@ -36,6 +36,6 @@ The app is static browser JavaScript. Development test packages are not served t
 
 [OpenStax section 6.5](https://openstax.org/books/anatomy-and-physiology-2e/pages/6-5-fractures-bone-repair) is the central source, with supporting sections 6.1–6.7. Each question preserves source identifiers, notes, and its bank version. Questions and diagrams are original authored study material; no textbook images, PDF, review-question copies, or personal course records are distributed or sent to the tutor.
 
-Independent anatomy-instructor review and real-model grading calibration have not occurred. All AI grades remain provisional, including after the small connection/spelling check. Healing intervals reflect approximate textbook descriptions. This public self-study tool does not authenticate course grades. See [content review notes](docs/CONTENT-REVIEW.md), [the detailed plan](docs/PLAN.md), and [release validation](docs/VALIDATION.md).
+Independent anatomy-instructor review and real-model grading calibration have not occurred. All AI grades remain provisional, with original rubric results retained. Healing intervals reflect approximate textbook descriptions. This public self-study tool does not authenticate course grades. See [content review notes](docs/CONTENT-REVIEW.md), [the detailed plan](docs/PLAN.md), and [release validation](docs/VALIDATION.md).
 
 Original software: MIT. Original educational questions and schematics: CC BY-NC-SA 4.0. Credits and source links are available within the app.

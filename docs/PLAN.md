@@ -366,3 +366,8 @@ The first implementation deliverable should be a representative desktop/mobile p
 [Ollama structured outputs](https://docs.ollama.com/capabilities/structured-outputs) supports schema-constrained responses; application validation and educational evaluation are still required.
 
 Research date: October 11, 2026. Recheck models, sizes, browser behavior, and moving-source references during development. No end-to-end browser/Ollama integration was tested during planning. Source reading verifies capability evidence, not runtime operation.
+
+
+## v1.1.0 tutor experience revision
+
+The Tutor route now opens a dedicated chat workspace. General discussion can cover any subject; it has a separate prompt and request path from academic quiz grading. Replies stream into readable messages. The conversation stores recent turns, local history and drafts, supports stopping and retrying, and offers copying and export. Setup moves into an on-demand three-step dialog with automatic connection checks, installed-model selection, streamed model downloads, and a reviewed Windows configuration helper. Custom folders, other operating systems and troubleshooting stay under expandable options. Desktop/mobile visual inspection and additional conversation, recovery, stream-parsing and accessibility checks precede release.

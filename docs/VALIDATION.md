@@ -4,17 +4,19 @@ The release uses automated checks for keys, randomization, grading, backups and 
 
 ## Automated unit checks
 
-13 checks cover question identities/source mappings; seeded Fisher–Yates shuffling; identity-preserving choice keys; strict unseen sampling; unambiguous typos and protected anatomical distinctions; component and sequence credit; pending-score exclusion; malformed backups; complete backup round trips; all automatic keys; loopback/model restrictions; and evidence/citation validation for AI assessments.
+17 checks cover question identities/source mappings; seeded Fisher–Yates shuffling; identity-preserving choice keys; strict unseen sampling; unambiguous typos and protected anatomical distinctions; component and sequence credit; pending-score exclusion; malformed backups; complete backup round trips; all automatic keys; loopback/model restrictions; evidence/citation validation for AI assessments; bounded multi-turn chat context; escaped message formatting; interrupted conversation recovery; and split UTF-8/NDJSON stream handling.
 
 ## Browser checks
 
-16 scenarios (8 on desktop and 8 on mobile) cover all primary routes, viewport overflow, WCAG A/AA automated audits, diagram labeling, immediate reload and draft recovery, history, export/import, assessment feedback concealment, later written self-assessment, mistake/source retention, weak-concept review, atlas stage controls, keyboard dialogs, tutor grading and failure recovery, sequence controls, partial multiple-selection credit, storage fallback, and enlarged text at widths 320, 360, 768 and 1024.
+22 scenarios (11 on desktop and 11 on mobile) cover all primary routes, viewport overflow, WCAG A/AA automated audits, diagram labeling, immediate reload and draft recovery, history, export/import, assessment feedback concealment, later written self-assessment, mistake/source retention, weak-concept review, atlas stage controls, keyboard dialogs, tutor grading and failure recovery, sequence controls, partial multiple-selection credit, storage fallback, enlarged text at widths 320, 360, 768 and 1024; general-topic chat context; streamed replies; chat draft/history recovery; stop/retry controls; readable conversation export; guided connection; model download; and generated Windows helper inspection.
 
-A simulated Ollama API validates deterministic UI behavior. A separate integration check also exercised a streamed model download and Windows custom-folder command generation. This does not prove real model reliability, browser permission behavior on every system, or that the OS protocol handler exists on every installation.
+A simulated Ollama API validates deterministic UI behavior. A real two-turn browser conversation also passed on Ollama 0.40.3 with the installed qwen3.5:4b-q4_K_M model: an initial general-topic explanation, a follow-up using that discussion, streamed output, and no page errors. This validates the conversation path on this machine; it does not calibrate academic grading or every model. A separate integration check also exercised a streamed model download and Windows custom-folder command generation. This does not prove real model reliability, browser permission behavior on every system, or that the OS protocol handler exists on every installation.
 
 ## Human visual inspection
 
-Desktop/mobile study screens and the original anatomical labeling layout were reviewed from actual browser screenshots. Muted-text contrast was improved after the automated audit, and typed drafts were given a synchronous recovery journal to survive immediate reloads.
+Desktop/mobile study and redesigned tutor screens and the original anatomical labeling layout were reviewed from actual browser screenshots. Muted-text contrast was improved after the automated audit, and typed drafts were given a synchronous recovery journal to survive immediate reloads.
+
+The Windows helper was generated in the browser, inspected, and parsed with the Windows PowerShell grammar without executing it or changing this computer’s settings. Real OS installation and browser local-network permission walkthroughs remain unverified.
 
 ## Deployment
 
