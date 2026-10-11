@@ -22,7 +22,7 @@ ${n<1?'<path d="M101 139 152 149 184 134 213 155 257 142 L259 163 214 175 177 15
 ${n===1?'<ellipse cx="180" cy="156" rx="105" ry="59" fill="#a7c4b3" opacity=".72"/><path d="M145 134Q180 116 215 134L215 183Q180 197 145 183Z" fill="#d4bc8b"/><path d="M104 143 147 154 184 140 213 163 255 151" fill="none" stroke="#818965" stroke-width="3"/>':''}
 ${n>=2?`<path d="M${n===2?'96':'103'} 105 Q79 161 101 213 L146 211 L214 210 L258 211 Q280 161 261 109Z" fill="#e4dcc0" stroke="#86927c" stroke-width="1.5"/>`:''}
 ${n>=1?`<g fill="none" stroke="#ae9471" stroke-width="2" opacity=".7">${Array.from({length:8},(_,i)=>`<path d="M${114+i*19} 121 l-14 62 m4 -55 23 44"/>`).join('')}</g>`:''}
-<g fill="none" stroke="#b15447" stroke-width="3"><path d="M177 294V${n===0?'194':'28'} M177 235l-27 -31 M177 246l27 -25 M177 87l-27 -29 M177 101l29 -40"/>${n>=1?'<path d="M177 187l-35 -24 M177 147l34 -22"/>':''}</g>
+<g class="repair-vessels" fill="none" stroke="#b15447" stroke-width="3"><path d="M177 294V${n===0?'194':'28'} M177 235l-27 -31 M177 246l27 -25 M177 87l-27 -29 M177 101l29 -40"/>${n>=1?'<path d="M177 187l-35 -24 M177 147l34 -22"/>':''}</g>
 ${targets?'<g class="diagram-markers"><circle cx="93" cy="155" r="14"/><text x="93" y="160">1</text><circle cx="180" cy="156" r="14"/><text x="180" y="161">2</text><circle cx="177" cy="87" r="14"/><text x="177" y="92">3</text></g>':''}
 ${isFinal?'<path d="M113 27v266 M247 27v266" fill="none" stroke="#c7c1a7" stroke-width="12" opacity=".7"/>':''}</svg>`;
 }

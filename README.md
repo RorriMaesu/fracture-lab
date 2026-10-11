@@ -1,22 +1,41 @@
 # Fracture Lab
-An animated, browser-based study lab for fracture patterns, bone repair and supporting OpenStax Chapter 6 concepts.
 
-**Live site:** https://rorrimaesu.github.io/fracture-lab/
+An animated anatomy study lab for fracture patterns, bone repair, and supporting OpenStax Anatomy and Physiology 2e Chapter 6 concepts.
+
+**[Open the live quiz](https://rorrimaesu.github.io/fracture-lab/)** · **[Repository milestones](https://github.com/RorriMaesu/fracture-lab/tags)**
+
+## What is included
+
+- 336 prompts across 84 concept families: 240 core fracture/repair/cell prompts and 96 supporting Chapter 6 prompts.
+- Recognition, multiple selection, typed labeling, event sequencing, and explanations; four tasks per family.
+- Fresh practice, weak-concept review, and assessment with feedback withheld until completion. Question order and choice order change; a session includes only one task per family. A strict unseen pool stops when exhausted.
+- Original SVG schematics, six-target bone labeling, internal/external callus labeling, and an animated four-stage repair explorer.
+- Component credit, unambiguous spelling tolerance, optional confidence, hints, saved drafts, session history, concept progress, reflection notes, and a searchable mistake notebook with direct textbook links.
+- Local progress with IndexedDB/localStorage fallback, backup export/import, and printable reports.
+- Optional local Ollama tutor: detection, desktop launch link where supported, installed local text-model selection, streamed downloads, custom model names, installation/model-folder guidance, hardware hints, and a quick model check.
+- Evidence-backed AI rubric feedback, Socratic follow-up, provisional explanation/semantic-label credit, and restoration of the original rubric result. Objective keys stay authoritative. Errors preserve existing grades.
+- Responsive layout, keyboard controls, reduced motion, larger text, and automated accessibility/browser checks.
 
 ## Build milestones
-Each completed phase is committed and pushed to main, with a corresponding release tag. The site includes a build-progress view.
 
-1. Foundation: visual direction and representative interactive questions.
-2. Quiz engine: randomization, grading, progress, review and backups.
-3. Content and atlas: expanded question bank, diagrams and repair animation.
-4. Local tutor: Ollama connection, setup, model selection and feedback.
-5. Quality and release: browser/accessibility checks and deployment verification.
+Each phase was pushed separately and tagged: [phase-1](https://github.com/RorriMaesu/fracture-lab/tree/phase-1), [phase-2](https://github.com/RorriMaesu/fracture-lab/tree/phase-2), [phase-3](https://github.com/RorriMaesu/fracture-lab/tree/phase-3), [phase-4](https://github.com/RorriMaesu/fracture-lab/tree/phase-4), and [phase-5](https://github.com/RorriMaesu/fracture-lab/tree/phase-5). The app has a visible build-progress view. GitHub Actions validates and deploys the app to Pages.
 
-## Local use
-Requires Node.js 22 or later for development checks. Run `npm test` and `npm run serve`, then open the printed URL. Students only need the website; Node.js is not needed by visitors.
+## Visitors
 
-## Sources
-The educational material is grounded in Anatomy and Physiology 2e Chapter 6. Questions and SVG illustrations are original authored study material, with source references. They have not yet been independently reviewed by an anatomy instructor. See the in-app Sources & credits.
+Open the website. No Fracture Lab download, account, API key, or AI installation is required for the quiz. Progress stays in this browser; export it before clearing site data or changing devices.
 
-The optional tutor is for local models and uses our authored rubrics and explanations. No textbook upload is performed.
+The optional tutor requires Ollama and a local text model on the same computer. Follow the in-app Tutor guide or [the setup notes](docs/OLLAMA.md). Browser permissions and allowed-origin setup may be necessary. A website cannot universally launch installed software or detect total GPU VRAM. On a phone, localhost refers to the phone rather than your desktop.
 
+## Development
+
+Requires Node.js 22 or later. Run `npm ci`, `npm test`, then `npm run serve`. For browser checks, run `npx playwright install chromium`, then `npm run test:e2e`. On Windows, an installed Edge executable can be used with the optional `PLAYWRIGHT_EDGE` environment variable. Visitors do not need Node.js.
+
+The app is static browser JavaScript. Development test packages are not served to students. No build step or backend is needed for the application itself. All asset/module URLs are relative to support the GitHub Pages repository path.
+
+## Academic foundation and limits
+
+[OpenStax section 6.5](https://openstax.org/books/anatomy-and-physiology-2e/pages/6-5-fractures-bone-repair) is the central source, with supporting sections 6.1–6.7. Each question preserves source identifiers, notes, and its bank version. Questions and diagrams are original authored study material; no textbook images, PDF, review-question copies, or personal course records are distributed or sent to the tutor.
+
+Independent anatomy-instructor review and real-model grading calibration have not occurred. All AI grades remain provisional, including after the small connection/spelling check. Healing intervals reflect approximate textbook descriptions. This public self-study tool does not authenticate course grades. See [content review notes](docs/CONTENT-REVIEW.md), [the detailed plan](docs/PLAN.md), and [release validation](docs/VALIDATION.md).
+
+Original software: MIT. Original educational questions and schematics: CC BY-NC-SA 4.0. Credits and source links are available within the app.
