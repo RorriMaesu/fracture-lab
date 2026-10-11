@@ -1,0 +1,82 @@
+:root{color-scheme:light}
+/* Keep the original light palette for printed study reports. */
+@media screen{
+ html[data-theme=dark]{color-scheme:dark;--paper:#101b18;--white:#17251f;--ink:#e6eee4;--muted:#a9bba9;--green:#a9c991;--lime:#a9c991;--line:#34463a;--red:#efb29d;--dark-raised:#1d3027;--dark-selected:#2b4333;--dark-faint:#22362c;--dark-warn:#42312b}
+ html[data-theme=dark] :focus-visible{outline-color:#b5d89e}
+ html[data-theme=dark] .icon-button:hover,html[data-theme=dark] .button,html[data-theme=dark] .move-button{background:var(--dark-faint);color:var(--ink)}
+ html[data-theme=dark] .button:hover{background:#304737}
+ html[data-theme=dark] .button.primary,html[data-theme=dark] .phase-list li.done .phase-number,html[data-theme=dark] .stage-tabs button.selected,html[data-theme=dark] .connect-steps button.current>span,html[data-theme=dark] .skip-link,html[data-theme=dark] #toast{background:var(--green);color:#14251b;border-color:var(--green)}
+ html[data-theme=dark] .button.primary:hover{background:#bfdba7}
+ html[data-theme=dark] .button.outline{background:transparent;color:var(--ink)}
+ html[data-theme=dark] .button.outline:hover{background:var(--dark-faint)}
+ html[data-theme=dark] .button.danger{background:#402b29;color:#f2bca8;border-color:#835b4d}
+ html[data-theme=dark] .danger{color:#f2bca8;border-color:#835b4d}
+ html[data-theme=dark] .hero h1 em,html[data-theme=dark] .tutor-top em{color:#a9c6b0}
+ html[data-theme=dark] .hero-art{background:radial-gradient(ellipse,#29483780,transparent 65%)}
+ html[data-theme=dark] .orbit,html[data-theme=dark] .orbit:before,html[data-theme=dark] .orbit:after{border-color:#52735b}
+ html[data-theme=dark] .floating-tag{background:#1a2d23eb;border-color:#3f5747;box-shadow:0 10px 25px #0002}
+ html[data-theme=dark] .mode-card.dark{background:#244538;color:var(--ink);border-color:#3e6750}
+ html[data-theme=dark] .mode-card.dark p,html[data-theme=dark] .mode-card.dark .mode-meta{color:#c6d9bd}
+ html[data-theme=dark] .mode-card.dark .mode-icon{border-color:#6b916d}
+ html[data-theme=dark] .learning-banner,html[data-theme=dark] .stage-image,html[data-theme=dark] .cell-note,html[data-theme=dark] .answer-comparison,html[data-theme=dark] .record-navigation,html[data-theme=dark] .workspace-tabs,html[data-theme=dark] .phase-number{background:var(--dark-faint)}
+ html[data-theme=dark] .workspace-tabs{border-color:var(--line)}
+ html[data-theme=dark] .workspace-tabs button[aria-selected=true]{background:#344b38;color:#d8eacb}
+ html[data-theme=dark] .quiz-progress,html[data-theme=dark] .mini-bar{background:#2c3e32}
+ html[data-theme=dark] .option:hover,html[data-theme=dark] .option.selected,html[data-theme=dark] .option.correct,html[data-theme=dark] .feedback,html[data-theme=dark] .record-link:hover,html[data-theme=dark] .record-link.selected{background:var(--dark-selected)}
+ html[data-theme=dark] .option.selected,html[data-theme=dark] .option.correct{border-color:#9abb83}
+ html[data-theme=dark] .option.incorrect,html[data-theme=dark] .feedback.wrong,html[data-theme=dark] .notice{background:var(--dark-warn);color:#f4dac9;border-color:#bf8d74}
+ html[data-theme=dark] .option .letter,html[data-theme=dark] .record-index,html[data-theme=dark] .record-navigation-title>span:last-child{border-color:#52694f}
+ html[data-theme=dark] .record-index{background:#16281c;color:#d9eac9}
+ html[data-theme=dark] .record-link{border-color:var(--line)}
+ html[data-theme=dark] .mistake-card{background:var(--white)}
+ html[data-theme=dark] #setup-message{color:#e2bf91}
+ html[data-theme=dark] .field-grid select,html[data-theme=dark] input[type=search],html[data-theme=dark] .label-fields input,html[data-theme=dark] textarea,html[data-theme=dark] .chat-dialog input:not([type=checkbox]),html[data-theme=dark] .chat-dialog select{background:#13221b;color:var(--ink);border-color:#486047}
+ html[data-theme=dark] input::placeholder,html[data-theme=dark] textarea::placeholder{color:#a5b5a0;opacity:1}
+ html[data-theme=dark] .diagram-markers path{stroke:#a1c0a6}
+ html[data-theme=dark] .diagram-markers circle{fill:#315e48;stroke:#dcecd2}
+ html[data-theme=dark] .ai-panel{background:#20362a;border-color:#506b45}
+ html[data-theme=dark] .learner-message{background:#18291f}
+ html[data-theme=dark] pre,html[data-theme=dark] .setup-guide code,html[data-theme=dark] .message-content :not(pre)>code{background:#1b2e22;color:#d8e8cd}
+ html[data-theme=dark] dialog,html[data-theme=dark] .chat-dialog{background:var(--white);border-color:#42583f;box-shadow:0 24px 90px #0006}
+ html[data-theme=dark] dialog::backdrop,html[data-theme=dark] .chat-dialog::backdrop{background:#06120db3}
+ html[data-theme=dark] .chat-shell{background:var(--white);border-color:#3a503d;box-shadow:0 18px 50px #0002}
+ html[data-theme=dark] .chat-rail{background:linear-gradient(155deg,#17352a,#11281f)}
+ html[data-theme=dark] .chat-main{background:radial-gradient(350px circle at var(--pointer-x) var(--pointer-y),#47683a22,transparent 75%),radial-gradient(ellipse at 85% 5%,#34502a35,transparent 55%),var(--white)}
+ html[data-theme=dark] .chat-toolbar{background:#182922cc;border-color:#344a35}
+ html[data-theme=dark] .chat-star,html[data-theme=dark] .chat-identity>.chat-star,html[data-theme=dark] .chat-starters button>.starter-symbol,html[data-theme=dark] .message-avatar,html[data-theme=dark] .chat-dialog-top .chat-icon,html[data-theme=dark] .setup-illustration,html[data-theme=dark] .setup-illustration.ready,html[data-theme=dark] .recommended{background:#2b4531;color:#c4dfa9}
+ html[data-theme=dark] .chat-tools .chat-icon:hover,html[data-theme=dark] .chat-icon:hover{background:#2b4230;border-color:#45603f}
+ html[data-theme=dark] .chat-connect-button{background:#213629;border-color:#476340;color:#c6dda9}
+ html[data-theme=dark] .connection-light{background:#83937b}
+ html[data-theme=dark] .connection-light.connected{background:#a8d18b;box-shadow:0 0 0 5px #a8d18b18}
+ html[data-theme=dark] .chat-identity #chat-status,html[data-theme=dark] .chat-model-bar,html[data-theme=dark] .chat-model-bar>span,html[data-theme=dark] .chat-welcome p,html[data-theme=dark] .chat-footnote,html[data-theme=dark] .chat-ai-note,html[data-theme=dark] .message-byline>span,html[data-theme=dark] .message-copy,html[data-theme=dark] .chat-thinking>p,html[data-theme=dark] .model-inventory-note,html[data-theme=dark] .model-picker-intro,html[data-theme=dark] .model-result-count,html[data-theme=dark] .model-description small,html[data-theme=dark] .model-picker-footer>div>span,html[data-theme=dark] .model-picker-footer small,html[data-theme=dark] .missing-model-help p,html[data-theme=dark] .model-empty p,html[data-theme=dark] .model-trigger small,html[data-theme=dark] .model-trigger>span>span{color:var(--muted)}
+ html[data-theme=dark] .chat-welcome>.eyebrow,html[data-theme=dark] .message-byline,html[data-theme=dark] .stream-label,html[data-theme=dark] .chat-starters button>svg,html[data-theme=dark] .chat-advanced summary,html[data-theme=dark] .missing-model-help summary,html[data-theme=dark] .model-family,html[data-theme=dark] .model-choice-state,html[data-theme=dark] .model-trigger>svg{color:#bfdaa5}
+ html[data-theme=dark] .chat-starters button{background:linear-gradient(145deg,#253c2bd9,#1b2f22d9);border-color:#3e5537;color:var(--ink);box-shadow:0 3px 8px #0001}
+ html[data-theme=dark] .chat-starters button:hover{background:#304934;border-color:#81a269;box-shadow:0 6px 16px #0002}
+ html[data-theme=dark] .chat-bottom{background:linear-gradient(0deg,#17251f 88%,#17251f00)}
+ html[data-theme=dark] .chat-composer{background:#13221b;border-color:#4c6347;box-shadow:0 7px 22px #0002}
+ html[data-theme=dark] .chat-composer:focus-within{border-color:#a5c785;box-shadow:0 7px 22px #0002,0 0 0 4px #a5c78512}
+ html[data-theme=dark] .chat-composer textarea{background:transparent;border:0}
+ html[data-theme=dark] .chat-send{background:linear-gradient(145deg,#bed6a3,#96ba7f);color:#172819;box-shadow:0 4px 8px #0002}
+ html[data-theme=dark] .chat-send:disabled{background:#2c4130;color:#b1c49f}
+ html[data-theme=dark] .chat-error,html[data-theme=dark] .model-picker-error{background:var(--dark-warn);color:#efc2a8}
+ html[data-theme=dark] .conversation-heading{border-color:#354a36}
+ html[data-theme=dark] .user .message-body{background:linear-gradient(135deg,#294331,#223b2b);border-color:#496343}
+ html[data-theme=dark] .message-content,html[data-theme=dark] .user .message-content{color:var(--ink)}
+ html[data-theme=dark] .message-content pre{background:#1b2e22;border-color:#3e5537}
+ html[data-theme=dark] .message-content blockquote{color:#bbceb0;border-color:#89ab72}
+ html[data-theme=dark] .message-warning{color:#efb99d}
+ html[data-theme=dark] .connect-steps button>span{border-color:#526c49}
+ html[data-theme=dark] .chat-dialog .connection-note{background:#2b4230;color:#d0e5b7}
+ html[data-theme=dark] .model-trigger,html[data-theme=dark] .model-trigger.compact,html[data-theme=dark] .model-row{background:#1a2d21;border-color:#415a3d;color:var(--ink)}
+ html[data-theme=dark] .model-trigger:hover,html[data-theme=dark] .model-row.selected,html[data-theme=dark] .model-row-main>button:not(.model-retry):hover{background:#2b4431;border-color:#87aa72}
+ html[data-theme=dark] .model-monogram,html[data-theme=dark] .model-empty>div{background:#2e4933;color:#c6e0ad}
+ html[data-theme=dark] .model-capabilities>span{background:#223b2a;color:#c6dfaf;border-color:#405a38}
+ html[data-theme=dark] .model-capabilities>.loaded-model{background:#365637;color:#e0f3c8;border-color:#6f915c}
+ html[data-theme=dark] .model-row.unavailable{background:#2b2d23;border-color:#555340}
+ html[data-theme=dark] .model-issue,html[data-theme=dark] .model-unavailable>summary{color:#e0c19e}
+ html[data-theme=dark] .model-description details summary{color:#c1c7ab}
+ html[data-theme=dark] .model-description details p{background:#383028;color:#edc9aa}
+ html[data-theme=dark] .model-retry{background:#35422c;color:#dfebc4;border-color:#626f48}
+ html[data-theme=dark] .model-unavailable,html[data-theme=dark] .model-picker-footer,html[data-theme=dark] .missing-model-help{border-color:#42543c}
+ html[data-theme=dark] .model-picker-dialog .model-picker-tools input,html[data-theme=dark] .model-picker-dialog .model-picker-tools select{background:#13221b;color:var(--ink)}
+}
